@@ -7,6 +7,8 @@ SELECT
 FROM
     orders;
 
+
+
 -- Q.2 Calculate the total revenue generated from pizza sales.
 
 SELECT 
@@ -16,6 +18,8 @@ FROM
     order_details
         JOIN
     pizzas ON order_details.pizza_id = pizzas.pizza_id;
+
+
 
 -- Q.3  Identify the highest-priced pizza.
 
@@ -28,6 +32,8 @@ FROM
 ORDER BY pizzas.price DESC
 LIMIT 1;
 
+
+
 -- Q.4Identify the most common pizza size ordered.
 
 SELECT 
@@ -38,6 +44,8 @@ FROM
     pizzas ON order_details.pizza_id = pizzas.pizza_id
 GROUP BY pizzas.size
 ORDER BY COUNT(pizzas.size) DESC;
+
+
 
 -- Q.5 List the top 5 most ordered pizza types along with their quantities.
 
@@ -53,6 +61,8 @@ GROUP BY pizza_types.name
 ORDER BY quantity DESC
 LIMIT 5;
 
+
+
 -- Q.6 Join the necessary tables to find the total quantity of each pizza category ordered.
 
 SELECT 
@@ -67,6 +77,8 @@ FROM
 GROUP BY pizza_types.category
 ORDER BY quantity DESC;
 
+
+
 -- Q.7Determine the distribution of orders by hour of the day.
 
 SELECT 
@@ -74,6 +86,7 @@ SELECT
 FROM
     orders
 GROUP BY HOUR(order_time);
+
 
 
 -- Q.8 Join relevant tables to find the category-wise distribution of pizzas.
@@ -86,6 +99,7 @@ FROM
     pizza_types
 GROUP BY category
 ORDER BY number_of_pizza DESC;
+
 
 
 -- Q.9 Group the orders by date and calculate the average number of pizzas ordered per day.
@@ -102,6 +116,7 @@ FROM
         JOIN
     order_details ON orders.order_id = order_details.order_id
 GROUP BY date) as order_quantity;
+
 
 
 -- Q.10 Determine the top 3 most ordered pizza types based on revenue.
@@ -123,6 +138,8 @@ FROM
 GROUP BY pizza_types.name
 ORDER BY revenue DESC
 LIMIT 3;
+
+
 
 
 -- Q.11 Calculate the percentage contribution of each pizza type to total revenue.
@@ -147,6 +164,8 @@ GROUP BY pizza_types.category
 ORDER BY perc DESC;
 
 
+
+
 -- Q.12 Analyze the cumulative revenue generated over time.
 
 select * from orders;
@@ -158,6 +177,8 @@ join pizzas on order_details.pizza_id = pizzas.pizza_id
 join orders
 on orders.order_id = order_details.order_id
 group by orders.order_date) as sales;
+
+
 
 
 -- Q.13 Determine the top 3 most ordered pizza types based on revenue for each pizza category.
