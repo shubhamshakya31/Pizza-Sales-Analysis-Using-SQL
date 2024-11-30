@@ -16,7 +16,7 @@ This project involves analyzing sales data for pizzas in a restaurant using SQL.
    - Identifies the pizza with the highest price in the dataset.
 
 4. **Most Common Pizza Size Ordered**
-   - Finds the most frequently ordered pizza size.
+   - Finds the most frequently ordered pizza size
 
 5. **Top 5 Most Ordered Pizza Types**
    - Lists the top 5 pizza types along with their quantities, based on the number of orders.
